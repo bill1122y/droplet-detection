@@ -9,6 +9,12 @@
 <img src="圖片1.png">
 以影像處理的方式先對微流體系統進行定位，使用物件偵測模型YOLO v7辨識液珠，即時找出液珠在畫面中所在的位置，結合多目標物件追蹤系統，追蹤每一顆液珠在微流體中的移動量，程式確實能按照液珠進入畫面的順序給予編號，確保每個液珠在連續的幀中具有一致性的標籤。
 
+# 影像處理Hough Transform ![image](https://github.com/user-attachments/assets/7f132f47-8084-4c44-8cf6-533b73f4e918)
+
+以影像處理找出微流體晶片的轉角，作為定位點，先透過高斯模糊去除雜訊，之後使用Canny Edge提取邊界，最後以Hough Transform 找出直線，以交界處作為定位點
+
+
+
 # 預訓練權重
 名稱:03011_y_shape.pt
 由於權重過大，存取於雲端 : [預訓練權重](https://drive.google.com/file/d/171sn0465V7ZXV-WuyA9X_MXG_AQBcQcb/view?usp=drive_link)
